@@ -1,0 +1,10 @@
+name: RevampCollectors
+main: eu.revamp.ChunkCollectorPlugin
+version: 1.0
+author: R3XET
+depend: [Vault, Factions]
+commands:
+  chunkcollectors:
+    description: Give a player a chunk collector.
+    aliases: [collector, chunkcollector]
+    permission: collector.give

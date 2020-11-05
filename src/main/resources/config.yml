@@ -1,0 +1,128 @@
+##############################################################
+##                      LICENSE SYSTEM                      ##
+##############################################################
+#PUT HERE YOUR LICENSE KEY! IF YOU DON"T HAVE ONE CONTACT THE AUTHOR ON DISCORD (R3XET#0852) / MC-MARKET (R3XET)
+LICENSE: "XXXX-XXXX-XXXX-XXXX"
+#PUT HERE YOUR LICENSE KEY! IF YOU DON"T HAVE ONE CONTACT THE AUTHOR ON DISCORD (R3XET#0852) / MC-MARKET (R3XET)
+
+##############################################################
+##                    COLLECTOR OPTIONS                     ##
+##############################################################
+
+# Add farms that will only grow in chunks with chunk collectors.
+
+DISABLED_NATURAL_FARMS:
+  - CACTUS
+
+# This is what will appear on-screen after the player sells all.
+SELL_TITLE: "&f&2$%price%&f"
+SELL_SUBTITLE: "&fYou sold all blocks in the chunk collector!"
+
+# This is the minimum permission required to use a collector. (0 = RECRUIT, 1 = MEMBER, 2 = MOD, ...)
+FACTION_PERMISSION_LEVEL: 3
+
+# When set to false, chunk collectors will be prevented from being placed in the wilderness.
+WILDERNESS_PLACE_ENABLED: false
+
+# How much TNT should one creeper be worth? (Example: 3 TNT per creeper?)
+TNT_AMOUNT_CREEPER: 1
+
+# By increasing this value, you can buff the experience collector. (max is 100)
+COLLECTOR_EXPERIENCE_CHANCE: 2
+
+##############################################################
+##                       COLLECTOR ITEM                     ##
+##############################################################
+
+COLLECTOR:
+  NAME: "&bChunk Collector"
+  MATERIAL: BEACON
+  LORE:
+    - "&rPlace this down in your &bclaimed land &fto"
+    - "&rstart collecting &bmobs &f& &bfarm &fdrops."
+    - "&rYou can use the sell wands to quickly sell your savings."
+    - "&r"
+    - "&4&lNOTICE: &rYou must be Co-Leader to use."
+
+
+##############################################################
+##                   COLLECTOR MENU GUI                     ##
+##############################################################
+
+COLLECTOR_GUI:
+  TITLE: "&bChunk Collector"
+  GLASS_COLOR: BLACK
+  SIZE: 54
+  ITEMS:
+    IRON_GOLEM:
+      NAME: "&bIron Golem &8(&7%amount% Golems&8)"
+      SLOT: 10
+      PRICE: 500
+    ENDERMAN:
+      NAME: "&bEnderman &8(&7%amount% Endermen&8)"
+      SLOT: 11
+      PRICE: 300
+    VILLAGER:
+      NAME: "&bVillager &8(&7%amount% Villagers&8)"
+      SLOT: 12
+      PRICE: 200
+    COW:
+      NAME: "&bCow &8(&7%amount% Cows&8)"
+      SLOT: 13
+      PRICE: 100
+    PIG:
+      NAME: "&bPig &8(&7%amount% Pigs&8)"
+      SLOT: 14
+      PRICE: 100
+    PIG_ZOMBIE:
+      NAME: "&bPigman Zombie &8(&7%amount% Pigmen&8)"
+      SLOT: 15
+      PRICE: 300
+    CHICKEN:
+      NAME: "&bChicken &8(&7%amount% Chickens&8)"
+      SLOT: 16
+      PRICE: 100
+    CACTUS:
+      NAME: "&bCactus &8(&7%amount% Cactus&8)"
+      SLOT: 21
+      PRICE: 300
+    CREEPER:
+      NAME: "&bCreeper &8(&7%amount% Creepers&8)"
+      SLOT: 22
+      PRICE: 500
+    SUGAR_CANE:
+      NAME: "&bSugar Cane &8(&7%amount% Canes&8)"
+      SLOT: 23
+      PRICE: 300
+  COMPONENTS:
+    TOTAL_VALUE:
+      TYPE: CHEST
+      NAME: "&bTotal Value"
+      LORE:
+        - "&a$%value%"
+      SLOT: 40
+    TOTAL_XP:
+      TYPE: XP
+      NAME: "&bExperience"
+      LORE:
+        - ""
+        - "&f%value% EXP &a(Levels)"
+        - ""
+        - "&bClick to redeem."
+      SLOT: 42
+
+##############################################################
+##                   SELLWAND INTEGRATION                   ##
+##############################################################
+
+# If you have a sellwand plugin,
+# simply set the NAMEs of your wands listed below.
+# If you need more wands, simply add 3: 4: 5: ...
+
+WANDS:
+  1:
+    NAME: "&aSellwand"
+    PRICE_MULTIPLIER: 1.0
+  2:
+    NAME: "&aSellwand 2x"
+    PRICE_MULTIPLIER: 2.0

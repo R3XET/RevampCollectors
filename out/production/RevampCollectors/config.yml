@@ -1,0 +1,146 @@
+####################################
+#         ChunkCollectors          #
+####################################
+
+prefix-success: '&a&l(!)&r '
+prefix-failure: '&4&l(x)&r '
+incorrect-syntax: '&c%syntax%'
+no-permission: '&7You do not have permission.'
+config-loading: '&cPlease wait, the config file is still loading...'
+player-unknown: '&cThe player you specified is offline.'
+invalid-amount: '&cInvalid amount specified.'
+
+# Add farms that will only grow in chunks with chunk collectors.
+
+disable-natural-farms:
+  - CACTUS
+
+# This is what will appear on-screen after the player sells all.
+title: '&f&2$%price%&f'
+subtitle: '&fYou sold all blocks in the chunk collector!'
+
+# This is the minimum permission required to use a collector. (0 = RECRUIT, 1 = MEMBER, 2 = MOD, ...)
+permission: 3
+
+# When set to false, chunk collectors will be prevented from being placed in the wilderness.
+wilderness-place:
+  allowed: false
+  prevent-message: '&cYou cannot place a %name%&c in the &2Wilderness&c.'
+
+# How much TNT should one creeper be worth? (Example: 3 TNT per creeper?)
+creeper-tnt: 1
+
+# By increasing this value, you can buff the experience collector. (max is 100)
+experience-chance: 2
+
+####################################
+#     Collector Placeable Item     #
+####################################
+
+chunk-collectors:
+  name: '&bChunk Collector'
+  type: BEACON
+  lore:
+    - '&rPlace this down in your &bclaimed land &fto'
+    - '&rstart collecting &bmobs &f& &bfarm &fdrops.'
+    - '&rYou can use the sell wands to quickly sell your savings.'
+    - '&r'
+    - '&4&lNOTICE: &rYou must be Co-Leader to use.'
+
+collector-give: '&aYou gave %player%: &f%amount%x %name%'
+collector-place: '&7You have placed the %name%'
+collector-break: '&7You have broken the %name%'
+collector-sell-item: '&aSuccessfully sold &f%amount%x %name% &afor &f$%price%.'
+collector-redeem-xp: '&aYou are now level: &f%level%.'
+collector-deny-place: '&cYou must be in a faction to place a chunk collector.'
+collector-deny-permission: '&cYou do not have permission to perform this action.'
+collector-already-exists: '&cYou cannot place two collectors in the same chunk.'
+collector-tnt-bank-deposit: '&aYou have deposited &f%amount%x TNT&a into your faction bank.'
+
+####################################
+#               GUIs               #
+####################################
+
+chunk-collector:
+  title: '&bChunk Collector'
+  glass-color: BLACK
+  size: 54
+  heads:
+    IRON_GOLEM:
+      name: '&bIron Golem &8(&7%amount% Golems&8)'
+      slot: 10
+      price: 500
+    ENDERMAN:
+      name: '&bEnderman &8(&7%amount% Endermen&8)'
+      slot: 11
+      price: 300
+    VILLAGER:
+      name: '&bVillager &8(&7%amount% Villagers&8)'
+      slot: 12
+      price: 200
+    COW:
+      name: '&bCow &8(&7%amount% Cows&8)'
+      slot: 13
+      price: 100
+    PIG:
+      name: '&bPig &8(&7%amount% Pigs&8)'
+      slot: 14
+      price: 100
+    PIG_ZOMBIE:
+      name: '&bZombie Pigman &8(&7%amount% Pigmen&8)'
+      slot: 15
+      price: 300
+    CHICKEN:
+      name: '&bChicken &8(&7%amount% Chickens&8)'
+      slot: 16
+      price: 100
+    CACTUS:
+      name: '&bCactus &8(&7%amount% Cactus&8)'
+      slot: 21
+      price: 300
+    CREEPER:
+      name: '&bCreeper &8(&7%amount% Creepers&8)'
+      slot: 22
+      price: 500
+    SUGAR_CANE:
+      name: '&bSugar Cane &8(&7%amount% Canes&8)'
+      slot: 23
+      price: 300
+  components:
+    logs:
+      type: PAPER
+      name: '&bSell History'
+      lore:
+        - '&b$%value%'
+      slot: 38
+    total-value:
+      type: CHEST
+      name: '&bTotal Value'
+      lore:
+        - '&a$%value%'
+      slot: 40
+    xp-collector:
+      type: XP
+      name: '&bExperience'
+      lore:
+        - ''
+        - '&f%value% EXP &a(Levels)'
+        - ''
+        - '&bClick to redeem.'
+      slot: 42
+
+####################################
+#       Sellwand Integration       #
+####################################
+
+# If you have a sellwand plugin,
+# simply set the names of your wands listed below.
+# If you need more wands, simply add 3: 4: 5: ...
+
+wands:
+  1:
+    name: '&aSellwand'
+    price-multiplier: 1.0
+  2:
+    name: '&aSellwand 2x'
+    price-multiplier: 2.0
